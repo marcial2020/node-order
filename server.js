@@ -15,7 +15,11 @@ const PORT = process.env.PORT || 3300
 //     PORT= 3000;
 // }
 
-app.get('/', (req,res) =>{
+//Assets
+
+app.use(express.static('public'));
+
+app.get('/', (req, res) =>{
     res.render('home');
 })
 
@@ -25,6 +29,6 @@ app.use(expressLayout);
 app.set('views', path.join(__dirname, '/resources/views'));
 app.set('view engine', 'ejs');
 
-app.listen(3000, () => {
+app.listen(3300, () => {
     console.log(`Listening on port ${PORT}`);
   });
